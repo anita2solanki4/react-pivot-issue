@@ -1,0 +1,73 @@
+{
+  "name": "react-pivot",
+  "description": "React-Pivot is a data-grid component with pivot-table-like functionality for data display, filtering, and exploration.",
+  "version": "3.0.0",
+  "author": "David Guttman <david@guttman.io> (http://davidguttman.com/)",
+  "browser": "index.jsx",
+  "main": "index.js",
+  "bugs": {
+    "url": "https://github.com/davidguttman/react-pivot/issues"
+  },
+  "scripts": {
+    "example": "budo example/demo.jsx --live",
+    "example-basic": "budo example/basic.jsx",
+    "example-persist": "budo example/persist.js",
+    "compile": "babel lib",
+    "start": "webpack --watch",
+    "dist": "npm run remove-dist && npm run build-standalone",
+    "remove-dist": "rm dist/*.js",
+    "build-standalone": "NODE_ENV=production browserify lib/umd.js | uglifyjs -mc > dist/react-pivot-standalone-${npm_package_version}.min.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/davidguttman/react-pivot.git"
+  },
+  "keywords": [
+    "data",
+    "excel",
+    "grid",
+    "pagination",
+    "pivot",
+    "react",
+    "react-component",
+    "sort"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/captivationsoftware/react-sticky",
+  "dependencies": {
+    "prop-types": "^15.5.8",
+    "raf": "^3.3.0",
+    "create-react-class": "^15.6.0",
+    "cssify": "^0.7.0",
+    "dataframe": "^1.3.0",
+    "envify": "^3.2.0",
+    "lodash": "^4.1.0",
+    "reactify": "^1.0.0",
+    "wildemitter": "^1.0.1",
+    "xtend": "^4.0.0"
+  },
+  "peerDependencies": {
+    "react": "^15.3.0",
+    "react-dom": "^15.3.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.23.1",
+    "babel-core": "^6.23.1",
+    "babel-loader": "^6.2.10",
+    "babel-plugin-transform-class-properties": "^6.23.0",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-react": "^6.5.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "browserify": "^8.1.3",
+    "budo": "^8.0.3",
+    "css-loader": "^0.28.7",
+    "faker": "^2.1.2",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "uglify-js": "^2.4.16",
+    "webpack": "^2.2.0"
+  },
+  "directories": {
+    "example": "example"
+  }
+}
