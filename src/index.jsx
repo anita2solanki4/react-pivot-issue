@@ -15,6 +15,7 @@ var PivotTable = require('./lib/pivot-table.jsx')
 var Dimensions = require('./lib/dimensions.jsx')
 var ColumnControl = require('./lib/column-control.jsx')
 
+
 module.exports = createReactClass({
   displayName: 'ReactPivot',
   getDefaultProps: function() {

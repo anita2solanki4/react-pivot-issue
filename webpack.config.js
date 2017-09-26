@@ -1,28 +1,32 @@
 const path = require('path');
-const webpack = require('webpack');
+
+const LIBRARY_NAME = 'react-pivot'
 
 module.exports = {
-  devtool: 'eval-source-map',
-  entry: {
-    example: path.resolve('example', 'demo.jsx'),
-    "example-basic": path.resolve('example', 'basic.jsx'),
-    "example-persist": path.resolve('example', 'persist.js')
-  },
-  output: {
-    path: path.join(__dirname, 'example'),
-    filename: '[name].bundle.js'
-  },
-  module: {
-    loaders: [
-      {
-        test: /\.jsx$/,
-        exclude: /node_modules/,
-        loader: 'babel-loader'
-      }, {
-        test: /\.css$/,
-            exclude: /node_modules/,
-            loader: 'css-loader'
-        }
-    ]
-  }
+    entry: {
+        'index': path.resolve('src', 'index.jsx'),
+    },
+    output: {
+        path: path.join(__dirname),
+        filename: '[name].js',
+        library: LIBRARY_NAME,
+        libraryTarget: "umd",
+        umdNamedDefine: true
+    },
+    module: {
+        rules:[
+            {
+                test: /\.css$/,
+                loader:"webpack-require-css",
+                options:{
+                    publicPath:'./src/'
+                }
+            },
+            {
+                test: /\.jsx$/,
+                exclude: /node_modules/,
+                loader: 'babel-loader'
+            }
+        ]
+    }
 };

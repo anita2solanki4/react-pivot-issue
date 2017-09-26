@@ -4,7 +4,6 @@ var React = require('react')
 var ReactDOM = require('react-dom')
 var createReactClass = require('create-react-class')
 var ReactPivot = require('..')
-
 var gh = require('./gh.jsx')
 var data = require('./data.json')
 
@@ -85,7 +84,7 @@ var Demo = createReactClass({
                       calculations={calculations}
                       reduce={reduce}
                       activeDimensions={['Transaction Type']}
-                      nPaginateRows={20} />
+                      nPaginateRows={20}/>
         </div>
 
         <div className={this.state.showInput ? '' : 'hide'}>
@@ -108,7 +107,9 @@ var Demo = createReactClass({
   }
 })
 
-var el = document.getElementById('demo');
+var el = document.createElement('div')
+document.body.appendChild(el)
+
 ReactDOM.render(
   <Demo />,
   el

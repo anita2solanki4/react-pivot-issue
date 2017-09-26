@@ -55,5 +55,5 @@ ReactDOM.render(
     reduce={reduce}
     calculations={calculations}
     activeDimensions={['Transaction Type']} />,
-    document.getElementById('demo')
+  document.body
 )

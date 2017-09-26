@@ -1,6 +1,6 @@
 var React = require('react')
 var Emitter = require('wildemitter')
-var ReactPivot = require('../load')
+var ReactPivot = require('../src/load')
 
 var rows = require('./data.json')
 
@@ -41,7 +41,7 @@ var persisted = JSON.parse(localStorage.rpPersisted || '{}')
 
 var bus = new Emitter
 
-var rp = ReactPivot(document.getElementById('demo'), {
+var rp = ReactPivot(document.body, {
   rows: rows,
   dimensions: dimensions,
   reduce: reduce,
